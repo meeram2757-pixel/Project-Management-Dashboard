@@ -1,0 +1,115 @@
+import { useId, useMemo, useState } from 'react'
+import { TASK_STATUSES } from '../../state/projects/constants.js'
+
+export function TaskFormModal({ onClose, onSubmit, initialTask }) {
+  const titleId = useId()
+  const descId = useId()
+  const dueId = useId()
+  const statusId = useId()
+
+  const [title, setTitle] = useState(initialTask?.title ?? '')
+  const [description, setDescription] = useState(initialTask?.description ?? '')
+  const [dueDate, setDueDate] = useState(initialTask?.dueDate ?? '')
+  const [status, setStatus] = useState(initialTask?.status ?? 'Todo')
+
+  const canSave = useMemo(() => title.trim().length > 0, [title])
+  const mode = initialTask ? 'Edit' : 'Add'
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    if (!canSave) return
+    onSubmit({
+      title,
+      description,
+      dueDate,
+      status,
+    })
+    onClose()
+  }
+
+  return (
+    <div className="modal modal-open backdrop-blur-md bg-black/40">
+      <div className="modal-box premium-glass border border-white/20 shadow-2xl">
+        <h2 className="font-semibold text-2xl text-white mb-2 animated-gradient-text">{mode} Task</h2>
+
+        <form className="mt-4 space-y-3" onSubmit={handleSubmit}>
+          <div className="form-control">
+            <label className="label" htmlFor={titleId}>
+              <span className="label-text text-white/80 font-medium">Title</span>
+            </label>
+            <input
+              id={titleId}
+              className="input premium-input w-full h-[40px] my-[20px]"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="e.g. Design login screen"
+              autoFocus
+            />
+          </div>
+
+          <div className="form-control">
+            <label className="label" htmlFor={descId}>
+              <span className="label-text text-white/80 font-medium">Description</span>
+            </label>
+            <textarea
+              id={descId}
+              className="textarea premium-input min-h-[100px] w-full mt-[20px] mb-[10px]"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Details, acceptance criteria, notes..."
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="form-control">
+              <label className="label" htmlFor={dueId}>
+                <span className="label-text text-white/80 font-medium">Due date</span>
+              </label>
+              <input
+                id={dueId}
+                type="date"
+                className="input premium-input w-full [color-scheme:dark] h-[40px] mt-[10px] mb-[10px]"
+                value={dueDate}
+                onChange={(e) => setDueDate(e.target.value)}
+              />
+            </div>
+
+            <div className="form-control">
+              <label className="label" htmlFor={statusId}>
+                <span className="label-text text-white/80 font-medium">Status</span>
+              </label>
+              <select
+                id={statusId}
+                className="select premium-input w-full bg-base-300 h-[30px] mt-[10px]"
+                value={status}
+                onChange={(e) => setStatus(e.target.value)}
+              >
+                {TASK_STATUSES.map((s) => (
+                  <option key={s} value={s} className="bg-slate-800 text-white">
+                    {s}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="flex mt-[10px] gap-[50px]">
+            <button type="button" onClick={onClose}>
+              Cancel
+            </button>
+            <button disabled={!canSave}>
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+
+      {/* <button
+        className="modal-backdrop"
+        aria-label="Close"
+        onClick={onClose}
+      /> */}
+    </div>
+  )
+}
+
