@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import { TASK_STATUSES } from '../../state/projects/constants.js'
+import { TASK_STATUSES } from '../../projects/constants.js'
 import { formatDate, isOverdue } from '../../utils/date.js'
 
 function statusBadge(status) {

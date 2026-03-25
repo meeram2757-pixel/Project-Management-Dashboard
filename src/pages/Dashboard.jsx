@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { ProjectCard } from '../components/Projects/ProjectCard.jsx'
 import { ProjectFormModal } from '../components/Projects/ProjectFormModal.jsx'
-import { useProjects } from '../state/projects/useProjects.js'
+import { useProjects } from '../projects/useProjects.js'
 import Button from '../components/Button.jsx'
 
 

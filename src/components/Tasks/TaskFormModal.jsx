@@ -1,5 +1,5 @@
 import { useId, useMemo, useState } from 'react'
-import { TASK_STATUSES } from '../../state/projects/constants.js'
+import { TASK_STATUSES } from '../../projects/constants.js'
 
 export function TaskFormModal({ onClose, onSubmit, initialTask }) {
   const titleId = useId()

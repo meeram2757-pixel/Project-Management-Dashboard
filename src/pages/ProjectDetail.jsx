@@ -3,8 +3,8 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { KanbanColumn } from '../components/Tasks/KanbanColumn.jsx'
 import { TaskCard } from '../components/Tasks/TaskCard.jsx'
 import { TaskFormModal } from '../components/Tasks/TaskFormModal.jsx'
-import { TASK_STATUSES } from '../state/projects/constants.js'
-import { useProjects } from '../state/projects/useProjects.js'
+import { TASK_STATUSES } from '../projects/constants.js'
+import { useProjects } from '../projects/useProjects.js'
 
 export function ProjectDetail() {
   const { projectId } = useParams()
