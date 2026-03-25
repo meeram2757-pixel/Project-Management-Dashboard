@@ -13,8 +13,8 @@ export function TaskCard({ task, onEdit, onDelete, onChangeStatus }) {
   const overdue = task.status !== 'Done' && isOverdue(task.dueDate)
 
   return (
-    <div 
-      className="card premium-glass-card cursor-grab active:cursor-grabbing hover:border-primary/50 transition-all"
+    <div
+      className="card premium-glass-card cursor-grab active:cursor-grabbing hover:border-primary/50"
       draggable
       onDragStart={(e) => {
         e.dataTransfer.setData('application/json', task.id)
@@ -24,10 +24,9 @@ export function TaskCard({ task, onEdit, onDelete, onChangeStatus }) {
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
             <div className="flex items-center gap-2">
-              {/* <h4 className="font-semibold truncate text-white">{task.title}</h4> */}
               <div className={`${statusBadge(task.status)} border-none shadow-sm`}>{task.status}</div>
             </div>
-                          <h4 className="animated-gradient-text">{task.title}</h4>
+            <h4 className="animated-gradient-text">{task.title}</h4>
 
             {task.description ? (
               <p className="text-sm text-white/70 mt-1 overflow-hidden text-ellipsis">
@@ -36,26 +35,13 @@ export function TaskCard({ task, onEdit, onDelete, onChangeStatus }) {
             ) : null}
           </div>
 
-          <div className="dropdown dropdown-end">
-            {/* <button className="btn btn-ghost btn-xs text-white/50 hover:text-white" type="button">
-              ⋯
-            </button> */}
-            {/* <ul className="dropdown-content menu premium-glass rounded-box w-44 p-2 shadow-2xl z-50"> */}
-              <li>
-                <button className='mb-[5px]' type="button" onClick={onEdit}>
-                  Edit
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="text-error"
-                  onClick={onDelete}
-                >
-                  Delete
-                </button>
-              </li>
-            {/* </ul> */}
+          <div className="flex flex-col gap-[5px]">
+            <button className="btn btn-ghost btn-xs text-white/50 hover:text-white" type="button" onClick={onEdit}>
+              Edit
+            </button>
+            <button className="btn btn-ghost btn-xs text-error hover:text-red-400" type="button" onClick={onDelete}>
+              Delete
+            </button>
           </div>
         </div>
 
@@ -76,7 +62,7 @@ export function TaskCard({ task, onEdit, onDelete, onChangeStatus }) {
             </label>
             <select
               id={statusId}
-              className="select select-bordered select-xs premium-input bg-transparent border-white/20 text-white/80 hover:text-white "
+              className="select select-xs premium-input"
               value={task.status}
               onChange={(e) => onChangeStatus(e.target.value)}
             >

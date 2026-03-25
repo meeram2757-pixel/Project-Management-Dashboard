@@ -13,7 +13,7 @@ export function TaskFormModal({ onClose, onSubmit, initialTask }) {
   const [status, setStatus] = useState(initialTask?.status ?? 'Todo')
 
   const canSave = useMemo(() => title.trim().length > 0, [title])
-  const mode = initialTask ? 'Edit' : 'Add'
+  const mode = initialTask?.id ? 'Edit' : 'Add'
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -68,7 +68,7 @@ export function TaskFormModal({ onClose, onSubmit, initialTask }) {
               <input
                 id={dueId}
                 type="date"
-                className="input premium-input w-full [color-scheme:dark] h-[40px] mt-[10px] mb-[10px]"
+                className="input premium-input w-full h-[40px] mt-[10px] mb-[10px]"
                 value={dueDate}
                 onChange={(e) => setDueDate(e.target.value)}
               />
@@ -80,7 +80,7 @@ export function TaskFormModal({ onClose, onSubmit, initialTask }) {
               </label>
               <select
                 id={statusId}
-                className="select premium-input w-full bg-base-300 h-[30px] mt-[10px]"
+                className="select premium-input w-full  h-[30px] mt-[10px]"
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
               >
@@ -104,11 +104,6 @@ export function TaskFormModal({ onClose, onSubmit, initialTask }) {
         </form>
       </div>
 
-      {/* <button
-        className="modal-backdrop"
-        aria-label="Close"
-        onClick={onClose}
-      /> */}
     </div>
   )
 }

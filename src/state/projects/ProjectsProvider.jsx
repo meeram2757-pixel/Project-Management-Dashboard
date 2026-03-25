@@ -1,11 +1,12 @@
 import { useMemo } from 'react'
-import { useLocalStorageState } from '../../hooks/useLocalStorageState.js'
+import { useLocalStorage } from '../../hooks/useLocalStorage.js'
+
 import { ProjectsContext } from './ProjectsContext.js'
 import { STORAGE_KEY } from './constants.js'
 import { createProjectsActions } from './projectsStore.js'
 
 export function ProjectsProvider({ children }) {
-  const [projects, setProjects] = useLocalStorageState(STORAGE_KEY, [])
+  const [projects, setProjects] = useLocalStorage(STORAGE_KEY, [])
 
   const actions = useMemo(() => createProjectsActions(setProjects), [setProjects])
 

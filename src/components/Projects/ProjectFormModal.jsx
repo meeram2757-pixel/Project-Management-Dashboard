@@ -55,7 +55,7 @@ export function ProjectFormModal({ onClose, onSubmit }) {
             <button type="button" onClick={onClose}>
               Cancel
             </button>
-          
+
             <button disabled={!canSave}>
               Create
             </button>
@@ -63,11 +63,6 @@ export function ProjectFormModal({ onClose, onSubmit }) {
         </form>
       </div>
 
-      {/* <button
-        className="modal-backdrop"
-        aria-label="Close"
-        onClick={onClose}
-      /> */}
     </div>
   )
 }
