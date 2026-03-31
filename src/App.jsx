@@ -4,7 +4,7 @@ import { AppLayout } from './components/Layout/AppLayout.jsx'
 import { Dashboard } from './pages/Dashboard.jsx'
 import { NotFound } from './pages/NotFound.jsx'
 import { ProjectDetail } from './pages/ProjectDetail.jsx'
-import { ProjectsProvider } from './state/projects/ProjectsProvider.jsx'
+import { ProjectsProvider } from './projects/ProjectsProvider.jsx'
 
 export default function App() {
   return (

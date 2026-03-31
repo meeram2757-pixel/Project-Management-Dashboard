@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage.js'
 
-import { ProjectsContext } from './ProjectsContext.js'
+import { ProjectsContext } from '../utils/ProjectsContext.js'
 import { STORAGE_KEY } from './constants.js'
 import { createProjectsActions } from './projectsStore.js'
 

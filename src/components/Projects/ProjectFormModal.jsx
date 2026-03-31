@@ -16,8 +16,20 @@ export function ProjectFormModal({ onClose, onSubmit }) {
   }
 
   return (
-    <div className="modal modal-open backdrop-blur-md bg-black/40">
-      <div className="modal-box premium-glass border border-white/20 !max-w-md shadow-2xl">
+    <div 
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+      style={{
+        position: 'fixed',
+        top: 0, left: 0, right: 0, bottom: 0,
+        zIndex: 9999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        backdropFilter: 'blur(4px)'
+      }}
+    >
+      <div className="premium-glass border border-white/20 w-[500px] rounded-2xl p-6 shadow-2xl relative">
         <h2 className="animated-gradient-text">Create Project</h2>
         <p className="text-sm text-white/70 mt-2">
           Projects contain tasks organized as a kanban boardd.
@@ -51,12 +63,12 @@ export function ProjectFormModal({ onClose, onSubmit }) {
             />
           </div>
 
-          <div className='flex gap-[50px] mt-[10px]'>
-            <button type="button" onClick={onClose}>
+          <div className='flex justify-end gap-[10px] mt-[6px]'>
+            <button type="button" onClick={onClose} className="bg-white/10 hover:bg-white/20 text-white transition-colors">
               Cancel
             </button>
 
-            <button disabled={!canSave}>
+            <button disabled={!canSave} className="bg-blue-600 hover:bg-blue-500 text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
               Create
             </button>
           </div>
