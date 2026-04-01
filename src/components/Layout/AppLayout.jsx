@@ -17,7 +17,7 @@ export function AppLayout() {
       {/* Sidebar */}
       <aside className="premium-glass w-[270px] h-full flex flex-col z-10 shrink-0 !border-y-0 !border-l-0 border-r border-white/10 !rounded-none">
         <div className="mb-8 w-full px-2">
-          <h2 className="text-2xl font-extrabold text-white flex items-center gap-[10px] tracking-wide" style={{ fontWeight: 500 }}>
+          <h2 className="text-2xl font-extrabold text-white flex items-center gap-[10px] tracking-wide mt-[30px]" style={{ fontWeight: 500 }}>
             <Layers className="text-blue-500" size={28} />
             Project Dashboard
           </h2>
@@ -26,7 +26,7 @@ export function AppLayout() {
         <nav className="flex-1 w-full flex flex-col mt-[50px]">
 
           <ul className="flex flex-col gap-[50px] w-full p-0 m-0 text-white">
-            <div className="mt-8 px-2">
+            <div className="mt-8 mb-[50px] px-2">
               <button
                 className="flex items-center py-3 bg-blue-600 hover:bg-blue-500 text-white transition-colors font-medium shadow-lg shadow-blue-500/20 border-white !rounded-[50px] gap-[10px]"
                 onClick={() => setCreateOpen(true)}
