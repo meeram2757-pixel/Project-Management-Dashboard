@@ -40,9 +40,9 @@ export function AppLayout() {
               { name: 'Dashboard', icon: LayoutDashboard, path: '/' },
               { name: 'Projects', icon: Briefcase, path: '/projects' },
               { name: 'Tasks', icon: CheckSquare, path: '/tasks' },
-              { name: 'Timelog', icon: Clock, path: '/timelog' },
-              { name: 'Users', icon: Users, path: '/users' },
-              { name: 'Project Template', icon: LayoutTemplate, path: '/templates' },
+              // { name: 'Timelog', icon: Clock, path: '/timelog' },
+              // { name: 'Users', icon: Users, path: '/users' },
+              // { name: 'Project Template', icon: LayoutTemplate, path: '/templates' },
             ].map((item) => (
               <li key={item.name} className="w-full list-none">
                 <NavLink

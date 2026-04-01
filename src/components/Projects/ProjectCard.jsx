@@ -6,7 +6,7 @@ export function ProjectCard({ project, onDelete }) {
 
   return (
     <div className="">
-      <div className="card-body premium-glass">
+      <div className="card-body premium-glass mt-[20px]">
         <div className="flex items-start justify-between">
           <div className="min-w-0" >
             <h3 className="animated-gradient-text">Title : {project.title}</h3>

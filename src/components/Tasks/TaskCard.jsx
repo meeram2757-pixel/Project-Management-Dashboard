@@ -14,7 +14,7 @@ export function TaskCard({ task, onEdit, onDelete, onChangeStatus }) {
 
   return (
     <div
-      className="card premium-glass-card cursor-grab active:cursor-grabbing hover:border-primary/50"
+      className="card premium-glass-card rounded-2xl! cursor-grab active:cursor-grabbing hover:border-primary/50"
       draggable
       onDragStart={(e) => {
         e.dataTransfer.setData('application/json', task.id)

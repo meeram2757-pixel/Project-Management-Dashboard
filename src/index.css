@@ -84,6 +84,8 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.3); */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 20px;
   /* margin-left: 30px; */
+  border-radius: 16px;
+  margin-top: 5px;
 }
 /* button{padding: 20px!important;} */
 .premium-glass-card:hover {
