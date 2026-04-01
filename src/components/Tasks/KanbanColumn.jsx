@@ -1,7 +1,7 @@
 export function KanbanColumn({ title, count, onDropTask, children }) {
   return (
     <section 
-      className="premium-glass rounded-2xl overflow-hidden flex flex-col h-full"
+      className="ml-[30px] mr-[30px] premium-glass rounded-2xl overflow-hidden flex flex-col h-full"
       onDragOver={(e) => {
         e.preventDefault()
       }}

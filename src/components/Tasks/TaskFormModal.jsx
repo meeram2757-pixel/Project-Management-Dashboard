@@ -37,7 +37,8 @@ export function TaskFormModal({ onClose, onSubmit, initialTask }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        // backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        background: 'rgba(15, 23, 42, 0.8)',
         backdropFilter: 'blur(4px)'
       }}
     >

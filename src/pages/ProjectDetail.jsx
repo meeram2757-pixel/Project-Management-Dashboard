@@ -90,7 +90,7 @@ export function ProjectDetail() {
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-3">
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center justify-between gap-3 pt-[20px]">
           <button className="btn btn-ghost btn-sm text-white/70 hover:text-white" onClick={() => navigate(-1)}>
             ← Back
           </button>
@@ -99,7 +99,7 @@ export function ProjectDetail() {
           </button>
         </div>
 
-        <div className="premium-glass rounded-2xl p-6">
+        <div className="pl-[30px] pb-[30px] rounded-2xl p-6">
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
             <div className="min-w-0">
               <h1 className="text-3xl font-bold truncate animated-gradient-text pb-1">Title : {project.title}</h1>

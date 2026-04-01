@@ -5,7 +5,7 @@ export function ProjectCard({ project, onDelete }) {
   const done = (project.tasks ?? []).filter((t) => t.status === 'Done').length
 
   return (
-    <div className="card premium-glass-card">
+    <div className="">
       <div className="card-body premium-glass">
         <div className="flex items-start justify-between">
           <div className="min-w-0" >

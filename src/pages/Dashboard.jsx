@@ -35,45 +35,44 @@ export function Dashboard() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 ml-[20px] mr-[20px]">
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 p-[20px]">
         <div>
-          <h1 className="text-3xl font-bold animated-gradient-text tracking-tight pb-1">Dashboard</h1>
+          <h1 className="text-3xl font-bold animated-gradient-text tracking-tight pb-1"  style={{ fontWeight: 600 }}>Dashboard</h1>
           <p className="text-white/70 mt-1 text-[25px]">
             Create projects, then manage tasks in a kanban board.
           </p>
         </div>
-        <div>
-          <button
-          //  className="btn btn-primary "
-            onClick={() => setCreateOpen(true)}>
-          New project
-        </button>
-        </div>
+        {/* <div>
+         <h2 className="text-4xl font-bold tracking-wide" style={{ fontWeight: 400 }}>Overview : </h2>
+        </div> */}
         
       </div>
+        <div>
+         <h2 className="text-4xl font-bold tracking-wide p-[20px]" style={{ fontWeight: 400 }}>Overview : </h2>
+        </div>
 
-      <div className="flex gap-[100px] justify-center premium-glass w-full rounded-2xl p-4">
-        <div className="stat bg-white/10 rounded-[25px] p-4 w-[100px] h-[100px] flex flex-col items-center justify-center border border-white/20">
+      <div className="flex gap-[100px] justify-center w-full rounded-2xl p-4 mb-[50px] ">
+        <div className="glass stat bg-white/10 rounded-[25px] p-4 w-[150px] h-[100px] flex flex-col items-center justify-center border border-white/20">
           <div className="animated-gradient-text">Projects</div>
           <div className="animated-gradient-text">{stats.totalProjects}</div>
         </div>
-        <div className="stat bg-white/10 rounded-[25px] p-4 w-[100px] h-[100px] flex flex-col items-center justify-center border border-white/20">
+        <div className="glass stat bg-white/10 rounded-[25px] p-4 w-[150px] h-[100px] flex flex-col items-center justify-center border border-white/20">
           <div className="animated-gradient-text">Total tasks</div>
           <div className="animated-gradient-text">{stats.totalTasks}</div>
         </div>
-        <div className="stat bg-white/10 rounded-[25px] p-4 w-[100px] h-[100px] flex flex-col items-center justify-center border border-white/20">
+        <div className="glass stat bg-white/10 rounded-[25px] p-4 w-[150px] h-[100px] flex flex-col items-center justify-center border border-white/20">
           <div className="animated-gradient-text">Completed</div>
           <div className="animated-gradient-text">{stats.doneTasks}</div>
         </div>
-        <div className="stat bg-white/10 rounded-[25px] p-4 w-[100px] h-[100px] flex flex-col items-center justify-center border border-white/20">
+        <div className="glass stat bg-white/10 rounded-[25px] p-4 w-[150px] h-[100px] flex flex-col items-center justify-center border border-white/20">
           <div className="animated-gradient-text">Completion</div>
           <div className="animated-gradient-text">{stats.completion}%</div>
         </div>
       </div>
 
       {projects.length === 0 ? (
-        <div className="card premium-glass-card text-center items-center py-12">
+        <div className="card text-center items-center py-12 mt-[100px]">
           <div className="card-body">
             <h2 className="text-xl font-bold mb-2 animated-gradient-text">No projects yet</h2>
             <p className="text-white/60 mb-6 ">
